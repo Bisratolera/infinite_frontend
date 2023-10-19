@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+h1 {
+  font-weight: bold;
+  color: #333; /* Text color */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style for h2 */
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style for h3 */
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Style for h4 */
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Style for h5 */
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Style for h6 */
+h6 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Style for paragraphs */
+p {
+  font-size: 18px; /* Adjust the font size to match the headings */
+  font-weight: normal; /* Adjust the font weight as needed */
+  color: #333; /* Text color similar to the headings */
+  margin-top: 10px; /* Top margin for spacing */
+  margin-bottom: 10px; /* Bottom margin for spacing */
+}
+
+.logo-container {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
