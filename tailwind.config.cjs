@@ -6,7 +6,12 @@ module.exports = {
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kanit: ["Kanit", "sans-serif"],
+        kaushan: ["Kaushan Script", "sans-serif"],
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
