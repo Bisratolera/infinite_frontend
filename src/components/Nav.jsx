@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Navbar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 export const Nav = () => {
   return (
     <Navbar

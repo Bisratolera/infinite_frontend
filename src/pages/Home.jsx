@@ -1,12 +1,16 @@
 import React from "react";
 import { Hero } from "../components/Hero";
 import { Progress } from "../components/Progress";
-
+// import { Overview } from "../components/Overview";
 const Home = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-5">
       <Hero />
       <Progress />
+      {/* <Overview />
+      <Overview />
+      <Overview />
+      <Overview /> */}
     </div>
   );
 };
