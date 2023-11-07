@@ -1,19 +1,49 @@
-import React from "react";
-import { Button, Navbar } from "flowbite-react";
+import React, {useState, useEffect} from "react";
+import '../index.css'
+
+
 export const Nav = () => {
+  
+  const [full, setFull] = useState(true)
+
+  const extend = () =>{
+   setFull(!full)
+  }
+  
+  useEffect(()=>{
+    setTimeout(() => {
+      setFull(!full)
+    }, 2000);
+  }, [])
+
+  const navStyle = {
+    width: full ? "90%" : "0%",
+  }
+    
+ 
+  const linkStyle = {
+    opacity: full ? "1" : "0",
+    transition: full ? "2s" : "0.6s",
+    visibility: full ? "visible" : "hidden"
+   
+  }
+
   return (
-    <Navbar
-      fluid
-      className="top-0 m-4  z-20 flex sticky overflow-hidden  bg-white p-0 sm:p-2 md:p-4 lg:p-6 xl:p-8 rounded-full shadow-md justify-center h-[40px] cursor-pointer"
-    >
-      <Navbar.Collapse>
-        <Navbar.Link href="#">Home</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <img src="" alt="LOGO" />
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
+    <div className={`h-[40px] mx-auto top-3 z-20 flex justify-center items-center sticky  bg-white border border-gray-400 rounded-full duration-700 shadow-md `} style={navStyle}>
+      <div className="w-[50%] flex justify-end md:gap-7 gap-4 translate-x-[-40px]" style={linkStyle}>
+        <a className="links" href="#">Home</a>
+        <a className="links" href="#">About</a>
+        <a className="links" href="#">Services</a>
+      </div>
+
+      <div onClick={extend} className="absolute top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[40px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full bg-red-500">
+        <img className="h-full imageLogo object-cover rounded-full" src="https://www.creativefabrica.com/wp-content/uploads/2020/09/09/infinity-symbol-logo-design-Graphics-5369643-1.jpg" alt="LOGO" />
+      </div>
+      
+      <div className="w-[50%] flex md:gap-7 gap-4 translate-x-[40px]" style={linkStyle}>
+        <a className="links" href="#">Pricing</a>
+        <a className="links" href="#">contact</a>
+      </div>
+    </div>
   );
 };
