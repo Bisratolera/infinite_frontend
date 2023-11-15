@@ -83,13 +83,13 @@ h6 {
 }
 
 /* Style for paragraphs */
-p {
-  font-size: 18px; /* Adjust the font size to match the headings */
-  font-weight: normal; /* Adjust the font weight as needed */
-  color: #333; /* Text color similar to the headings */
-  margin-top: 10px; /* Top margin for spacing */
-  margin-bottom: 10px; /* Bottom margin for spacing */
-}
+/* p {
+  font-size: 18px;
+  font-weight: normal; 
+  color: #333; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+} */
 
 .logo-container {
   width: 150px;
@@ -110,11 +110,11 @@ circle {
   animation: animate 2s linear forwards;
 }
 
-.links{
-  @apply relative cursor-pointer h-full
+.links {
+  @apply relative cursor-pointer h-full;
 }
-.links::after{
-  content: '';
+.links::after {
+  content: "";
   position: absolute;
   bottom: -7px;
   left: 0;
@@ -122,28 +122,26 @@ circle {
   width: 100%;
   background-color: rgb(129, 129, 129);
   opacity: 1;
-  transition: height .3s;
+  transition: height 0.3s;
   border-radius: 4px 4px 0 0;
 }
-.links:hover::after{
+.links:hover::after {
   height: 3px;
 }
-.links:active::after{
+.links:active::after {
   height: 10px;
 }
 
-
-
-img.imageLogo{
-  animation: dup .5s forwards ease-in-out 2.7s;
+img.imageLogo {
+  animation: dup 0.5s forwards ease-in-out 2.7s;
 }
 @keyframes dup {
-  0%, 100%{
+  0%,
+  100% {
     scale: 1;
   }
-  50%{
+  50% {
     scale: 1.2;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.568);
   }
 }
-
