@@ -1,6 +1,7 @@
 import { Button, Card, Label, TextInput } from "flowbite-react";
 import React from "react";
-
+import Lottie from "react-lottie-player";
+import lottieJson from "../assets/animations/signup_animation.json";
 const Signup = () => {
   const handleFileInput = () => {
     document.getElementById("fileInput").click();
@@ -94,7 +95,11 @@ const Signup = () => {
         </Card>
 
         <div className="flex justify-center">
-          <h2>lottie files goes here</h2>
+          <Lottie
+            animationData={lottieJson}
+            play
+            style={{ width: "100%,", maxWidth: "400px", height: "auto" }}
+          />
         </div>
       </div>
     </div>
