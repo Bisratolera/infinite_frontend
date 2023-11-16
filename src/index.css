@@ -161,3 +161,22 @@ img.imageLogo {
 .animate-scroll {
   animation: scroll 80s linear infinite;
 }
+
+/* CSS (or in your React component's styles) */
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
