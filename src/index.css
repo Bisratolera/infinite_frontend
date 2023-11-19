@@ -1,3 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* latin-ext */
+@font-face {
+  font-family: "Kaushan Script";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kaushanscript/v16/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJHMw.woff2)
+    format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Kaushan Script";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/kaushanscript/v16/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+html {
+  background-color: #f7f2f2;
+}
+
+h1 {
+  font-weight: bold;
+  color: #333; /* Text color */
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Style for h2 */
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Style for h3 */
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Style for h4 */
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Style for h5 */
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Style for h6 */
+h6 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Style for paragraphs */
+/* p {
+  font-size: 18px;
+  font-weight: normal; 
+  color: #333; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+} */
+
+.logo-container {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+circle {
+  fill: none;
+  stroke: #111;
+  stroke-width: 20px;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 100;
+  animation: animate 2s linear forwards;
+}
+
+.links {
+  @apply relative cursor-pointer h-full;
+}
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  height: 0px;
+  width: 100%;
+  background-color: rgb(129, 129, 129);
+  opacity: 1;
+  transition: height 0.3s;
+  border-radius: 4px 4px 0 0;
+}
+.links:hover::after {
+  height: 3px;
+}
+.links:active::after {
+  height: 10px;
+}
+
+img.imageLogo {
+  animation: dup 0.5s forwards ease-in-out 2.7s;
+}
+@keyframes dup {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.568);
+  }
+}
+
+/* CSS */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-250px * 18)
+    ); /* Adjust the value based on your slide width and count */
+  }
+}
+
+.animate-scroll {
+  animation: scroll 80s linear infinite;
+}
+
+/* CSS (or in your React component's styles) */
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
