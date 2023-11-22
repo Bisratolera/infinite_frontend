@@ -180,3 +180,11 @@ img.imageLogo {
     transform: translateY(-10px);
   }
 }
+
+.what-we-do {
+  color: black;
+  font-size: 2rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
