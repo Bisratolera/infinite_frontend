@@ -1,9 +1,14 @@
-import React from "react";
-
-import { Button, Modal, Label, TextInput } from "flowbite-react";
+import { Button, Modal } from "flowbite-react";
 import React, { useState } from "react";
 
-export const confirm = () => {
+export const Confirm = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [email, setEmail] = useState("");
+
+  function onCloseModal() {
+    setOpenModal(false);
+    setEmail("");
+  }
   return (
     <div>
       <Button onClick={() => setOpenModal(true)}>pay now</Button>
@@ -33,17 +38,27 @@ export const confirm = () => {
             <div className="flex flex-col gap-3 ">
               <div className="flex flex-col gap-4 items-center">
                 <div className="flex flex-col gap-6  ">
-                  <TextInput
+                  <input
+                    type="text"
+                    className="border-black rounded-xl w-[370px]"
                     placeholder="Name on the Card"
-                    className="rounded-full"
                   />
-                  <TextInput
+                  <input
+                    type="text"
+                    className="border-black rounded-xl w-[370px]"
                     placeholder="Card Number"
-                    className="rounded-full"
                   />
                   <div className="flex flex-row gap-7">
-                    <TextInput placeholder="MM/YY" />
-                    <TextInput placeholder="CVV" />
+                    <input
+                      type="text"
+                      className="border-black rounded-xl w-[170px]"
+                      placeholder="MM/YY"
+                    />
+                    <input
+                      type="text"
+                      className="border-black rounded-xl w-[170px]"
+                      placeholder="CVV"
+                    />
                   </div>
                 </div>
                 <Button

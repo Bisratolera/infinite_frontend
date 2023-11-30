@@ -4,6 +4,7 @@ import "./index.css";
 import { Footer } from "./components/Footer";
 import Details from "./pages/Details";
 import { Payment } from "./components/payment";
+import { Confirm } from "./components/confirm";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       {/* <Details /> */}
       {/* <Login /> */}
       {/* <Carousels /> */}
-      <Payment />
+      {/* <Payment /> */}
+      {/* <Confirm /> */}
+      <Details />
       <Footer />
     </div>
   );
