@@ -1,5 +1,4 @@
 // // import React from "react";
-import { Button } from "flowbite-react";
 
 import React, { useState, useEffect } from "react";
 import "../index.css";
@@ -12,9 +11,7 @@ export const Nav = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setFull(!full);
-    }, 2000);
+    setTimeout(() => setFull(!full), 2000);
   }, []);
 
   const navStyle = {
@@ -49,7 +46,7 @@ export const Nav = () => {
 
       <div
         onClick={extend}
-        className="absolute top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[40px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full bg-red-500"
+        className="absolute top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[40px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full"
       >
         <img
           className="h-full imageLogo object-cover rounded-full"

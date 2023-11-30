@@ -9,9 +9,6 @@ const Home = () => {
       <Hero />
       <Progress />
       <Overview />
-      <Overview />
-      <Overview />
-      <Overview />
       <Carousels />
     </div>
   );
