@@ -16,7 +16,7 @@ function App() {
       {/* <Carousels /> */}
       {/* <Payment /> */}
       {/* <Confirm /> */}
-      <Details />
+      {/* <Details /> */}
       <Footer />
     </div>
   );
