@@ -3,27 +3,27 @@ import { Nav } from "./components/Nav";
 import "./index.css";
 import { Footer } from "./components/Footer";
 
-import VideoPage from './pages/VideoPage'
-=======
+import VideoPage from "./pages/VideoPage";
 import Details from "./pages/Details";
 import { Payment } from "./components/payment";
 import { Confirm } from "./components/confirm";
-
+import { Course } from "./components/Course";
 
 function App() {
   return (
     <div className="App">
       <Nav />
 
-      <VideoPage />
+      {/* <VideoPage /> */}
       {/* <Outlet /> */}
       {/* <Outlet /> */}
-      {/* <Details /> */
+      {/* <Details /> */}
       {/* <Login /> */}
       {/* <Carousels /> */}
       {/* <Payment /> */}
       {/* <Confirm /> */}
       {/* <Details /> */}
+      <Course />
       <Footer />
     </div>
   );
