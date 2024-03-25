@@ -1,4 +1,5 @@
 import React from "react";
+import { FcGoogle } from "react-icons/fc";
 import Lottie from "react-lottie-player";
 import { Card, Label, Button } from "flowbite-react";
 import lottieJson from "../assets/animations/signup_animation.json";
@@ -11,19 +12,20 @@ const Login = () => {
     const selectedFile = e.target.files[0];
     console.log("Selected file:", selectedFile);
   };
+
+  const handleSubmit = () => {};
   return (
-    <div className="flex flex-row gap-16 mt-12 ml-8">
+    <div className="flex flex-row gap-40 mt-12 ml-8">
       <Lottie
         animationData={lottieJson}
         play
         style={{ width: "100%,", maxWidth: "400px", height: "auto" }}
       />
       <div className="flex justify-center">
-        <Card className="object-cover rounded-3xl shadow-lg w-[550px] h-[875px] mr-4 shadow-gray-500/50">
-          <form className="flex flex-col justify-center items-center gap-3">
-            <div className="w-[120px] h-[120px] rounded-full border-2 border-black bg-white flex justify-center items-center relative overflow-hidden">
+        <Card className="object-cover rounded-3xl shadow-lg w-[500px] h-[600px] mr-4 shadow-gray-500/50">
+          <form className="" onSubmit={handleSubmit}>
+            <div className="w-[120px] h-[120px] rounded-full border-2 border-black bg-white flex  items-center relative overflow-hidden ">
               {/* <img src="/ppc.jpg" alt="ppc" className="object-cover" /> */}
-              <h2>LOGO</h2>
             </div>
 
             <div className="flex flex-col gap-3">
@@ -42,11 +44,24 @@ const Login = () => {
             </div>
             <p className="mt-4 flex justify-center">
               don't you have account, create one
-              <a href="#">
+              <a href="/register">
                 <u>Signup</u>
               </a>
             </p>
           </form>
+          <div className="flex items-center justify-center flex-col gap-2">
+            or
+            <Button
+              pill="true"
+              size="md"
+              color="dark"
+              className="flex flex-row gap-5"
+              href="#"
+            >
+              <FcGoogle />
+              Continue With Google
+            </Button>
+          </div>
         </Card>
       </div>
     </div>

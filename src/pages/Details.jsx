@@ -6,7 +6,7 @@ import React from "react";
 
 const Details = () => {
   return (
-    <div>
+    <div className="">
       <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-3 m-3 justify-center items-center">
           <input
