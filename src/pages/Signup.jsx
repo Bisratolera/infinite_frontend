@@ -3,26 +3,26 @@ import React, { useEffect, useState } from "react";
 import Lottie from "react-lottie-player";
 import { FcGoogle } from "react-icons/fc";
 import lottieJson from "../assets/animations/signup_animation.json";
-import { auth, provider } from "../functions/config";
+// import { auth, provider } from "../functions/config";
 import { signInWithPopup } from "firebase/auth";
 import Home from "./Home";
 import toast, { Toaster } from "react-hot-toast";
 import { redirect } from "react-router-dom";
 const Signup = () => {
   const [value, setValue] = useState("");
-  const handleGoogleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((data) => {
-        setValue(data.user.email);
-        localStorage.setItem("email", data.user.email);
-        toast.success("Authentication successful");
-        redirect("/");
-      })
-      .catch((error) => {
-        toast.error("Authentication failed");
-        console.error("Authentication failed:", error);
-      });
-  };
+  // const handleGoogleAuth = () => {
+  //   signInWithPopup(auth, provider)
+  //     .then((data) => {
+  //       setValue(data.user.email);
+  //       localStorage.setItem("email", data.user.email);
+  //       toast.success("Authentication successful");
+  //       redirect("/");
+  //     })
+  //     .catch((error) => {
+  //       toast.error("Authentication failed");
+  //       console.error("Authentication failed:", error);
+  //     });
+  // };
 
   useEffect(() => {
     setValue(localStorage.getItem("email"));
@@ -115,7 +115,7 @@ const Signup = () => {
                     events and marketing promotions
                   </p> */}
 
-                  <Button
+                  {/* <Button
                     pill="true"
                     size="md"
                     color="dark"
@@ -124,7 +124,7 @@ const Signup = () => {
                   >
                     <FcGoogle />
                     continue with Google
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>
