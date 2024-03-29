@@ -25,7 +25,7 @@ export const Progress = () => {
     setValue();
   }, []);
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full font-kanit">
       <div className="flex flex-col gap-0 items-center border border-black px-3 md:px-10 rounded-[1.23rem]">
         <h2 className="text-white what-we-do">What We Had So Far</h2>
         <div className="inner min-h-[13rem] w-full rounded-full flex gap-10 justify-center items-center shadow-inner">

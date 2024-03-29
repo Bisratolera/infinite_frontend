@@ -10,6 +10,9 @@ import Course from "./components/Course";
 import Login from "./pages/Login";
 import Details from "./pages/Details";
 import Account from "./pages/Account";
+import Contact from "./components/Contact";
+import { Verfication } from "./components/Verfication";
+import Confirmation from "./components/Confirmation";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +45,18 @@ const router = createBrowserRouter([
       {
         path: "/account",
         element: <Account />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/verify",
+        element: <Verfication/>,
+      },
+      {
+        path: "/confirmation",
+        element: <Confirmation />,
       },
     ],
   },

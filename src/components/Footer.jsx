@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 export const Footer = () => {
   return (
-    <div className="  font-kanit">
+    <div className="font-kanit">
       <div className="flex flex-col gap-16 border bg-[#fff] mx-10 border-black justify-center items-center m-8 h-[250px] rounded-t-3xl rounded-r-0  rounded-b-0 -mb-2">
         <div className="flex flex-row gap-5">
           <FaSquareFacebook className="w-[50px] h-[50px] icon" />

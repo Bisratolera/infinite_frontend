@@ -26,14 +26,14 @@ export const Nav = () => {
 
   return (
     <div
-      className={`h-[40px] mx-auto top-3 z-20 flex justify-center items-center sticky  bg-white border border-gray-400 rounded-full duration-700 shadow-md `}
+      className={`h-[40px] mx-auto top-3 z-20 flex justify-center items-center sticky  bg-white border border-gray-400 rounded-full duration-700 shadow-md  font-kanit`}
       style={navStyle}
     >
       <div
         className="w-[50%] flex justify-end md:gap-7 gap-4 translate-x-[-40px]"
         style={linkStyle}
       >
-        <a className="links" href="#">
+        <a className="links" href="/">
           Home
         </a>
         <a className="links" href="#">
@@ -59,10 +59,10 @@ export const Nav = () => {
         className="w-[50%] flex md:gap-7 gap-4 translate-x-[40px]"
         style={linkStyle}
       >
-        <a className="links" href="#">
-          Pricing
+        <a className="links" href="/details">
+          Courses
         </a>
-        <a className="links" href="#">
+        <a className="links" href="/contact">
           contact
         </a>
       </div>

@@ -40,7 +40,7 @@ const Signup = () => {
     <div className="font-kanit">
       <Toaster />
       <div className="flex flex-row gap-16 mt-12 ml-8">
-        <Card className="object-cover rounded-3xl shadow-lg w-[550px] h-[820px] mr-4 shadow-gray-500/50">
+        <Card className="object-cover rounded-3xl shadow-lg w-auto h- mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center gap-3 py-3 px-6">
             <div className="w-[100px] h-[100px] rounded-full border-2 border-black bg-white flex justify-center items-center relative overflow-hidden">
               <img src="/ppc.jpg" alt="ppc" className="object-cover" />

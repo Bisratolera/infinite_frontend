@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "flowbite-react";
 export const Seemore = () => {
   return (
-    <div className="flex justify-center items-center relative">
+    <div className="flex justify-center items-center relative font-kanit">
       <Button
         href="/details"
         className="w-[200px] h-[50px] bg-[#000] border-[#fff]"
