@@ -10,19 +10,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { redirect } from "react-router-dom";
 const Signup = () => {
   const [value, setValue] = useState("");
-  // const handleGoogleAuth = () => {
-  //   signInWithPopup(auth, provider)
-  //     .then((data) => {
-  //       setValue(data.user.email);
-  //       localStorage.setItem("email", data.user.email);
-  //       toast.success("Authentication successful");
-  //       redirect("/");
-  //     })
-  //     .catch((error) => {
-  //       toast.error("Authentication failed");
-  //       console.error("Authentication failed:", error);
-  //     });
-  // };
+  toast.success("registered successfully");
 
   useEffect(() => {
     setValue(localStorage.getItem("email"));
@@ -41,9 +29,13 @@ const Signup = () => {
       <Toaster />
       <div className="flex flex-row gap-16 mt-12 ml-8">
         <Card className="object-cover rounded-3xl shadow-lg w-auto h- mr-4 shadow-gray-500/50">
-          <form className="flex flex-col justify-center items-center gap-3 py-3 px-6">
+          <form className="flex flex-col justify-center items-center gap-3">
             <div className="w-[100px] h-[100px] rounded-full border-2 border-black bg-white flex justify-center items-center relative overflow-hidden">
-              <img src="/ppc.jpg" alt="ppc" className="object-cover" />
+              <img
+                src="/ppc.jpg"
+                alt="ppc"
+                className="object-cover absolute inset-0 m-auto"
+              />
               <input
                 type="file"
                 id="fileInput"
@@ -55,6 +47,7 @@ const Signup = () => {
                 onClick={handleFileInput}
               ></div>
             </div>
+
             <Label value="Photo(optional)" className="justify-center" />
             <div className="grid grid-cols-2 gap-11 w-full">
               <div className="flex flex-col gap-1">
@@ -106,25 +99,6 @@ const Signup = () => {
                       <u>Privacy Policy</u>
                     </a>
                   </p>
-                </div>
-                <div className="w-full mx-auto">
-                  {/* <input type="checkbox" name="" id="" /> */}
-                  {/* <p>
-                    By Creating account, i am also consenting to recieve SMS
-                    messages and emails, including product new feature updates,
-                    events and marketing promotions
-                  </p> */}
-
-                  {/* <Button
-                    pill="true"
-                    size="md"
-                    color="dark"
-                    className=" flex flex-row gap-8 "
-                    onClick={handleGoogleAuth}
-                  >
-                    <FcGoogle />
-                    continue with Google
-                  </Button> */}
                 </div>
               </div>
             </div>

@@ -18,23 +18,24 @@ const Register = () => {
       <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg">
         <Card className="object-cover rounded-3xl shadow-lg w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center py-3 px-6">
-            <div className="w-[100px] h-[100px] rounded-full border-2 border-black bg-white flex justify-center items-center  overflow-hidden">
+            <div className="w-[100px] h-[100px] rounded-full border-2 border-black bg-white flex justify-center items-center relative overflow-hidden">
               <img
                 src="/ppc.jpg"
                 alt="ppc"
-                className="object-cover flex relative"
+                className="object-cover absolute inset-0 m-auto"
               />
               <input
                 type="file"
                 id="fileInput"
-                className=" top-0 left-0 opacity-0 w-full h-full cursor-pointer"
+                className="absolute top-0 left-0 opacity-0 w-full h-full cursor-pointer"
                 onChange={handleFileChange}
               />
               <div
-                className="relative inset-0 bg-black opacity-0 hover:opacity-25 transition-opacity duration-300"
+                className="absolute inset-0 bg-black opacity-0 hover:opacity-25 transition-opacity duration-300"
                 onClick={handleFileInput}
               ></div>
             </div>
+
             <Label value="Photo (optional)" className="justify-center" />
             <div className=" grid-cols-1 md:grid-cols-2 gap-11 w-full">
               <div className=" lg:flex-row flex flex-row gap-5 md:flex-col">
