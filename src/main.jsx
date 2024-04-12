@@ -13,6 +13,8 @@ import Account from "./pages/Account";
 import Contact from "./components/Contact";
 import { Verfication } from "./components/Verfication";
 import Confirmation from "./components/Confirmation";
+import { Footer } from "../src/components/Footer"; // Import Footer component
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -52,11 +54,48 @@ const router = createBrowserRouter([
       },
       {
         path: "/verify",
-        element: <Verfication/>,
+        element: <Verfication />,
       },
       {
         path: "/confirmation",
         element: <Confirmation />,
+      },
+      // Include footer component on specific routes
+      {
+        path: "/",
+        element: (
+          <>
+            <Footer />
+            <Route />
+          </>
+        ),
+      },
+      {
+        path: "/register",
+        element: (
+          <>
+            <Footer />
+            <Route />
+          </>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <>
+            <Footer />
+            <Route />
+          </>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <>
+            <Footer />
+            <Route />
+          </>
+        ),
       },
     ],
   },

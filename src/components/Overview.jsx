@@ -8,7 +8,7 @@ export const Overview = () => {
       </h5>
 
       <div
-        className="flex overflow-x-auto flex-row gap-7 justify-center"
+        className="grid overflow-x-auto xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  justify-center"
         style={{ width: "100%" }}
       >
         {/*  */}
