@@ -1,13 +1,25 @@
-// // import React from "react";
-
 import React, { useState, useEffect } from "react";
 import "../index.css";
-
+import { Button } from "flowbite-react";
+import { MdOutlineLightMode } from "react-icons/md";
 export const Nav = () => {
   const [full, setFull] = useState(true);
+  const [theme, setTheme] = useState("Light");
+
+  useEffect(() => {
+    if (theme == "") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
   const extend = () => {
     setFull(!full);
+  };
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "Light" : "dark");
   };
 
   useEffect(() => {
@@ -42,11 +54,17 @@ export const Nav = () => {
         <a className="links" href="#">
           Services
         </a>
+        <a className="links" href="#">
+          Courses
+        </a>
+        <a className="links" href="#">
+          Contact
+        </a>
       </div>
 
       <div
         onClick={extend}
-        className="absolute top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[40px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full"
+        className="absolute  flex justify-center top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[50px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full"
       >
         <img
           className="h-full imageLogo object-cover rounded-full"
@@ -56,15 +74,15 @@ export const Nav = () => {
       </div>
 
       <div
-        className="w-[50%] flex md:gap-7 gap-4 translate-x-[40px]"
+        className="w-[50%] flex justify-center md:gap-7 gap-4 translate-x-[40px]"
         style={linkStyle}
       >
-        <a className="links" href="/details">
-          Courses
-        </a>
-        <a className="links" href="/contact">
-          contact
-        </a>
+        <MdOutlineLightMode onClick={handleThemeSwitch} />
+        <Button size="xs" pill color="light">
+          <a className="links" href="/login">
+            Login
+          </a>
+        </Button>
       </div>
     </div>
   );
