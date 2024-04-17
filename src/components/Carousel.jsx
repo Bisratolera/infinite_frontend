@@ -2,7 +2,7 @@ import React from "react";
 
 export const Carousels = () => {
   return (
-    <div className="carousel">
+    <div className="carousel ">
       <div
         x-data="{}"
         x-init="$nextTick(() => {

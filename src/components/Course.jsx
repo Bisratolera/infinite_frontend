@@ -37,7 +37,7 @@ const Course = () => {
 
   return (
     <>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-4 dark:bg-gray-950 dark:text-white">
         <div className=" m-6 flex flex-col gap-4  font-kanit">
           <div className="flex flex-col gap-2">
             <div className="w-[560px] h-[350px] rounded-[35px] ml-[15px] ">

@@ -10,7 +10,7 @@ export const Payment = () => {
     setEmail("");
   }
   return (
-    <div>
+    <div className="dark:bg-gray-950 dark:text-white">
       <Button onClick={() => setOpenModal(true)}>pay now</Button>
       <Modal
         show={openModal}
