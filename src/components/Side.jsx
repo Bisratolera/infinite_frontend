@@ -12,7 +12,7 @@ import {
 } from "react-icons/hi";
 export const Side = () => {
   return (
-    <div className="ml-4 mt-2 h-[700px]">
+    <div className="ml-4 mt-2 h-[700px] dark:bg-gray-950 dark:text-white">
       <Sidebar aria-label="Sidebar with content separator example">
         <Sidebar.Items>
           <Sidebar.ItemGroup>

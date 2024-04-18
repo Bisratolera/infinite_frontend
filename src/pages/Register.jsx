@@ -14,7 +14,7 @@ const Register = () => {
   };
 
   return (
-    <div className="font-kanit">
+    <div className="font-kanit dark:bg-gray-950 dark:text-white">
       <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg">
         <Card className="object-cover rounded-3xl shadow-lg w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center py-3 px-6">
@@ -50,7 +50,7 @@ const Register = () => {
                   <Label value="Last Name" />
                   <input
                     type="text"
-                    className="border-black rounded-3xl h-[35px]"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white"
                   />
                 </div>
               </div>
