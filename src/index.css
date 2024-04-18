@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+
+  @apply transition-colors duration-200;
+}
+
 /* latin-ext */
 @font-face {
   font-family: "Kaushan Script";
