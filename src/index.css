@@ -5,8 +5,6 @@
 @tailwind utilities;
 
 * {
-
-  @apply transition-colors duration-200;
 }
 
 /* latin-ext */
@@ -35,7 +33,7 @@
 html {
   background-color: #f7f2f2;
 }
-body{
+body {
   overflow-x: hidden;
 }
 
@@ -200,10 +198,10 @@ img.imageLogo {
 /* .carousel{
   background-color: red;
 } */
-.carousel ul li{
+.carousel ul li {
   height: 70px;
 }
-.carousel ul li img{
+.carousel ul li img {
   height: 70px;
   object-fit: contain;
   filter: grayscale();
