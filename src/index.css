@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+}
+
 /* latin-ext */
 @font-face {
   font-family: "Kaushan Script";
@@ -29,6 +32,9 @@
 }
 html {
   background-color: #f7f2f2;
+}
+body {
+  overflow-x: hidden;
 }
 
 h1 {
@@ -179,4 +185,24 @@ img.imageLogo {
   50% {
     transform: translateY(-10px);
   }
+}
+
+.what-we-do {
+  color: black;
+  font-size: 2rem;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+/* .carousel{
+  background-color: red;
+} */
+.carousel ul li {
+  height: 70px;
+}
+.carousel ul li img {
+  height: 70px;
+  object-fit: contain;
+  filter: grayscale();
 }
