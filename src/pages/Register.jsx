@@ -14,9 +14,9 @@ const Register = () => {
   };
 
   return (
-    <div className="font-kanit dark:bg-gray-950 dark:text-white">
-      <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg">
-        <Card className="object-cover rounded-3xl shadow-lg w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
+    <div className="font-kanit">
+      <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg ">
+        <Card className="object-cover rounded-3xl shadow-lg dark:shadow-cyan-500/50 w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center py-3 px-6">
             <div className="w-[100px] h-[100px] rounded-full border-2 border-black bg-white flex justify-center items-center relative overflow-hidden">
               <img
@@ -43,14 +43,14 @@ const Register = () => {
                   <Label value="First Name" />
                   <input
                     type="text"
-                    className="border-black rounded-3xl h-[35px]"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:hover:text-white  dark:shadow-cyan-500"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
                   <Label value="Last Name" />
                   <input
                     type="text"
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
                   />
                 </div>
               </div>
@@ -59,28 +59,28 @@ const Register = () => {
                 <Label value="Username" />
                 <input
                   type="text"
-                  className="border-black rounded-3xl h-[35px]"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <Label value="Email" />
                 <input
                   type="email"
-                  className="border-black rounded-3xl h-[35px]"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <Label value="Password" />
                 <input
                   type="password"
-                  className="border-black rounded-3xl h-[35px]"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <Label value="Confirm Password" />
                 <input
                   type="password"
-                  className="border-black rounded-3xl h-[35px]"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50"
                 />
               </div>
             </div>
@@ -88,7 +88,7 @@ const Register = () => {
               <input
                 type="checkbox"
                 className="mr-2"
-                id="termsCheckbox"
+                id="termsCheckbox dark:bg-gray-900 dark:text-white dark:shadow-cyan-500/50  shadow-lgdark:shadow-cyan-500/50"
                 required
               />
               <label htmlFor="termsCheckbox">
@@ -112,7 +112,7 @@ const Register = () => {
             </p>
           </form>
           <div className="flex justify-center items-center flex-col gap-1">
-            <h2> OR </h2>
+            <h2 className="dark:text-white"> OR </h2>
             <Button pill color="dark" className="flex flex-row gap-5">
               <FcGoogle />
               Continue With Google

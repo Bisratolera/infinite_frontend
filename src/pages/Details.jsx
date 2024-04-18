@@ -6,7 +6,7 @@ import React from "react";
 
 const Details = () => {
   return (
-    <div className="">
+    <div className="dark:bg-gray-950 dark:text-white">
       <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-3 m-3 justify-center items-center">
           <input

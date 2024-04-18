@@ -7,7 +7,7 @@ import { FaSearch, FaRegBell } from "react-icons/fa";
 const Account = () => {
   return (
     <div>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2 dark:bg-gray-950 dark:text-white">
         <div className="">
           <Side />
         </div>

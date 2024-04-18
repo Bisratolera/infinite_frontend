@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = () => {};
   return (
-    <div className="flex flex-row gap-40 mt-12 ml-8">
+    <div className="flex flex-row gap-40 mt-12 ml-8 dark:bg-gray-950 dark:text-white">
       <Lottie
         animationData={lottieJson}
         play
@@ -23,7 +23,7 @@ const Login = () => {
       />
       <div className="flex justify-center">
         <Card className="object-cover rounded-3xl shadow-lg w-[500px] h-[600px] mr-4 shadow-gray-500/50">
-          <form className="" onSubmit={handleSubmit}>
+          <form className="dark:bg-gray-950 dark:text-white" onSubmit={handleSubmit}>
             <div className="w-[120px] h-[120px] rounded-full border-2 border-black bg-white flex  items-center relative overflow-hidden ">
               {/* <img src="/ppc.jpg" alt="ppc" className="object-cover" /> */}
             </div>
