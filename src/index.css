@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-}
 
 /* latin-ext */
 @font-face {
@@ -205,4 +203,8 @@ img.imageLogo {
   height: 70px;
   object-fit: contain;
   filter: grayscale();
+}
+
+.hero-images-right img{
+  @apply absolute transition-all duration-500
 }

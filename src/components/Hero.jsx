@@ -10,7 +10,7 @@ export const Hero = () => {
               <div className="max-w-xl mb-6 ">
                 <h2 className="max-w-lg mb-6 font-kaushan text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none dark:text-white">
                   Let us handle
-                  <br className="hidden md:block dark:text-white"  />
+                  <br className="hidden md:block dark:text-white" />
                   your next{" "}
                   <span className="inline-block text-deep-purple-accent-400 dark:text-white">
                     destination
@@ -41,23 +41,23 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center -mx-4 lg:pl-8">
+            <div className=" hero-images-right flex items-center justify-center -mx-4 lg:pl-8 group relative">
               <div className="flex flex-col items-end px-3 ">
                 <img
-                  className="object-cover mb-6 hover:relative hover:mr-8 transition  hover:duration-300 hover:delay-150 ease-in-out cursor-pointer rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 bg-gray-500 shadow-gray-500/50 dark:shadow-cyan-500/50 "
+                  className="object-cover mb-6 top-0 left-8 group-hover:left-6 group-hover:top-[-10px] cursor-pointer rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 bg-gray-500 shadow-gray-500/50 dark:shadow-cyan-500/50 "
                   src="/img_1.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
                   alt=""
                 />
 
                 <img
-                  className="object-cover w-20 h-20 hover:mt-8 transition cursor-pointer rounded-xl shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40 bg-gray-500  shadow-gray-500/50 dark:shadow-cyan-500/50"
+                  className="object-cover -bottom-[7rem] left-24 group-hover:left-20 w-20 h-20 cursor-pointer rounded-xl shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40 bg-gray-500  shadow-gray-500/50 dark:shadow-cyan-500/50"
                   src="/img_2.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
                   alt=""
                 />
               </div>
               <div className="px-3">
                 <img
-                  className="object-cover w-40 h-40 rounded-xl hover:ml-8 transition cursor-pointer shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80 bg-gray-500  shadow-gray-500/50 shadow-cyan-500/50"
+                  className="object-cover w-40 h-40 rounded-xl right-20 top-20  group-hover:right-16 cursor-pointer shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80 bg-gray-500   shadow-cyan-500/50"
                   src="/img_3.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
                   alt=""
                 />
