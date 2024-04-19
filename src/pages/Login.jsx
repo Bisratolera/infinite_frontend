@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = () => {};
   return (
-    <div className="flex flex-row gap-40 mt-12 ml-8 dark:bg-gray-950 dark:text-white">
+    <div className="flex flex-row gap-40 mt-12 ml-8">
       <Lottie
         animationData={lottieJson}
         play
@@ -23,16 +23,21 @@ const Login = () => {
       />
       <div className="flex justify-center">
         <Card className="object-cover rounded-3xl shadow-lg w-[500px] h-[600px] mr-4 shadow-gray-500/50">
-          <form className="dark:bg-gray-950 dark:text-white" onSubmit={handleSubmit}>
+          <form className=" " onSubmit={handleSubmit}>
             <div className="w-[120px] h-[120px] rounded-full border-2 border-black bg-white flex  items-center relative overflow-hidden ">
               {/* <img src="/ppc.jpg" alt="ppc" className="object-cover" /> */}
+              <img
+                src="/ppc.jpg"
+                alt="ppc"
+                className="object-cover absolute inset-0 m-auto"
+              />
             </div>
 
             <div className="flex flex-col gap-3">
               <Label value="Email" className="" />
-              <input type="email" className="border-black rounded-3xl" />
+              <input type="email" className="border-black rounded-3xl dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200" />
               <Label value="Password" className="" />
-              <input type="password" className="border-black rounded-3xl" />
+              <input type="password" className="border-black rounded-3xl dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200" />
             </div>
             <div className="mt-6 grid grid-cols-2 gap-[63px] justify-center">
               <Button pill="true" size="md" color="dark">

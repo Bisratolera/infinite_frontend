@@ -14,7 +14,7 @@ const Register = () => {
   };
 
   return (
-    <div className="font-kanit">
+    <div className="font-kanit ">
       <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg ">
         <Card className="object-cover rounded-3xl shadow-lg dark:shadow-cyan-500/50 w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center py-3 px-6">
@@ -43,14 +43,14 @@ const Register = () => {
                   <Label value="First Name" />
                   <input
                     type="text"
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:hover:text-white  dark:shadow-cyan-500"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white  hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
                   <Label value="Last Name" />
                   <input
                     type="text"
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
               </div>
@@ -59,36 +59,36 @@ const Register = () => {
                 <Label value="Username" />
                 <input
                   type="text"
-                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <Label value="Email" />
                 <input
                   type="email"
-                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
                 />
               </div>
               <div className="flex flex-col gap-1">
                 <Label value="Password" />
                 <input
                   type="password"
-                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50 dark:shadow-cyan-500/50"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                 />
               </div>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 ">
                 <Label value="Confirm Password" />
                 <input
                   type="password"
-                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg dark:shadow-cyan-500/50"
+                  className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                 />
               </div>
             </div>
             <div className="mt-4">
               <input
                 type="checkbox"
-                className="mr-2"
-                id="termsCheckbox dark:bg-gray-900 dark:text-white dark:shadow-cyan-500/50  shadow-lgdark:shadow-cyan-500/50"
+                className="mr-2 "
+                id="termsCheckbox dark:bg-gray-900 dark:text-white shadow-lg "
                 required
               />
               <label htmlFor="termsCheckbox">
