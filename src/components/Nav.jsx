@@ -4,6 +4,7 @@ import { Button } from "flowbite-react";
 import { MdOutlineLightMode } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
+import { Avatar } from "flowbite-react";
 
 export const Nav = ({ isDarkMode, toggleDarkMode }) => {
   const [full, setFull] = useState(true);
@@ -55,9 +56,9 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
     transition: full ? "2s" : "0.6s",
     visibility: full ? "visible" : "hidden",
   };
-
+  "use client";
   return (
-    <div className="flex">
+    <div className="flex ">
       <div
         className={`h-[40px] mx-auto  top-3 z-20 flex justify-center items-center sticky  bg-white border border-gray-400 rounded-full duration-700 shadow-md  font-kanit dark:bg-gray-950 dark:text-white`}
         style={navStyle}
@@ -110,7 +111,10 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
           </Button>
         </div>
       </div>
-      <div className=" mt-2">
+      <div className=" mt-2 flex gap-10">
+      <a href="../pages/Account.jsx">
+        <Avatar img="/profile.jpg" alt="avatar of Jese" rounded />
+      </a>
         <button className="w-10 h-10 ml-3" onClick={toggleMode}>
           {darkMode ? (
             <IoSunny style={{ fontSize: "25", color: "yellow", transition: "0.9s" }} />

@@ -14,7 +14,7 @@ const Register = () => {
   };
 
   return (
-    <div className="font-kanit ">
+    <div className="font-kanit dark-duration">
       <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg ">
         <Card className="object-cover rounded-3xl shadow-lg dark:shadow-cyan-500/50 w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
           <form className="flex flex-col justify-center items-center py-3 px-6">

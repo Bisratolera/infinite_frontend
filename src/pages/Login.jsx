@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = () => {};
   return (
-    <div className="flex flex-row gap-40 mt-12 ml-8">
+    <div className="flex flex-row gap-40 mt-12 ml-8 dark-duration">
       <Lottie
         animationData={lottieJson}
         play
