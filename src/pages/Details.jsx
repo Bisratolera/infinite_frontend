@@ -6,12 +6,12 @@ import React from "react";
 
 const Details = () => {
   return (
-    <div className="dark:bg-gray-950 dark:text-white dark-duration">
+    <div className="dark:bg-gray-950 dark:text-white transition-colors">
       <div className="flex flex-col gap-4">
         <div className="flex flex-row gap-3 m-3 justify-center items-center">
           <input
             type="text"
-            className="rounded-full w-[450px]"
+            className="rounded-full w-[450px] dark:bg-slate-800"
             placeholder="search courses"
           />
           <Button outline pill color="dark">

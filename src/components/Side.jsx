@@ -12,11 +12,11 @@ import {
 } from "react-icons/hi";
 export const Side = () => {
   return (
-    <div className="ml-4 mt-2 h-[700px] dark:bg-gray-950 dark:text-white">
+    <div className="ml-4 mt-2 h-[700px] dark:bg-gray-950 dark:text-white shadow-md shadow-gray-600 dark:shadow-cyan-600 rounded-md ">
       <Sidebar aria-label="Sidebar with content separator example">
         <Sidebar.Items>
           <Sidebar.ItemGroup>
-            <Sidebar.Item href="#" icon={HiChartPie}>
+            <Sidebar.Item active href="#" icon={HiChartPie}>
               Dashboard
             </Sidebar.Item>
             <Sidebar.Item href="#" icon={HiViewBoards}>
@@ -31,10 +31,10 @@ export const Side = () => {
             <Sidebar.Item href="#" icon={HiShoppingBag}>
               Products
             </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiArrowSmRight}>
+            <Sidebar.Item href="/Login" icon={HiArrowSmRight}>
               Sign In
             </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiTable}>
+            <Sidebar.Item href="/Register" icon={HiTable}>
               Sign Up
             </Sidebar.Item>
           </Sidebar.ItemGroup>

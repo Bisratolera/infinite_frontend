@@ -3,7 +3,7 @@ import React from 'react'
 function VideoPage() {
     return (
         <>
-            <div className=' mt-10 flex flex-col md:flex-row justify-between px-4 md:px-14 dark:bg-gray-950 dark:text-white dark-duration'>
+            <div className=' mt-10 flex flex-col md:flex-row justify-between px-4 md:px-14 dark:bg-gray-950 dark:text-white transition-colors'>
                 <aside className='md:w-[54%] w-full flex flex-col gap-4'>
                     <h1 className='ml-4 my-0'>Video Title will be placed here</h1>
                     <div className='w-full rounded-2xl overflow-hidden shadow-2xl'>

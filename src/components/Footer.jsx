@@ -11,7 +11,7 @@ export const Footer = () => {
 
   return (
     <div
-      className={`font-kanit  w-full  dark:bg-gray-950 dark:text-white${
+      className={`font-kanit  w-full  dark:bg-gray-950 dark:text-white transition-colors ${
         currUrl.includes("confirmation") ? "absolute" : "relative"
       } bottom-0`}
     >

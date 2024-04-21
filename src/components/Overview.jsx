@@ -2,7 +2,7 @@ import React from "react";
 
 export const Overview = () => {
   return (
-    <div className="flex flex-col gap-3 ml-7 overflow-x-auto max-w-full font-kanit dark:bg-gray-950 dark:text-white">
+    <div className="flex flex-col gap-3 ml-7 overflow-x-auto max-w-full font-kanit dark:bg-gray-950 dark:text-white transition-colors">
       <h5 style={{ textTransform: "uppercase" }} className="ml-3 dark:text-white">
         top rated
       </h5>

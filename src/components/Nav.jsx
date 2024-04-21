@@ -112,7 +112,7 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
         </div>
       </div>
       <div className=" mt-2 flex gap-10">
-      <a href="../pages/Account.jsx">
+      <a className="links" href="/Account">
         <Avatar img="/profile.jpg" alt="avatar of Jese" rounded />
       </a>
         <button className="w-10 h-10 ml-3" onClick={toggleMode}>
