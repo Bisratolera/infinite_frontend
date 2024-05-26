@@ -41,7 +41,7 @@ export const Hero = () => {
               </div>
             </div>
 
-            <div className=" hero-images-right flex items-center justify-center -mx-4 lg:pl-8 group relative">
+            {/* <div className=" hero-images-right flex items-center justify-center -mx-4 lg:pl-8 group relative">
               <div className="flex flex-col items-end px-3 ">
                 <img
                   className="object-cover mb-6 hover:relative hover:mr-8 transition  hover:duration-300 hover:delay-150 ease-in-out cursor-pointer rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 bg-gray-500 shadow-gray-500/50 dark:shadow-cyan-500/50 "
@@ -62,7 +62,7 @@ export const Hero = () => {
                   alt=""
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
