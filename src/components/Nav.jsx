@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import { Button } from "flowbite-react";
-import { MdOutlineLightMode } from "react-icons/md";
+import { Button, Navbar } from "flowbite-react";
 import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
-import { Avatar } from "flowbite-react";
 
 export const Nav = ({ isDarkMode, toggleDarkMode }) => {
   const [full, setFull] = useState(true);
@@ -56,73 +54,45 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
     transition: full ? "2s" : "0.6s",
     visibility: full ? "visible" : "hidden",
   };
-  "use client";
+  ("use client");
   return (
-    <div className="flex ">
-      <div
-        className={`h-[40px] mx-auto  top-3 z-20 flex justify-center items-center sticky  bg-white border border-gray-400 rounded-full duration-700 shadow-md  font-kanit dark:bg-gray-950 dark:text-white`}
-        style={navStyle}
-      >
-        <div
-          className="w-[50%]  flex justify-end md:gap-7  gap-4 translate-x-[-40px]"
-          style={linkStyle}
-        >
-          <a className="links" href="/">
-            Home
-          </a>
-          <a className="links" href="#">
-            About
-          </a>
-          <a className="links" href="#">
-            Services
-          </a>
-          <a className="links" href="#">
-            Courses
-          </a>
-          <a className="links" href="#">
-            Contact
-          </a>
-        </div>
-
-        <div
-          onClick={extend}
-          className="absolute  flex justify-center top-[50%] border left-[50%] translate-x-[-50%] translate-y-[-50%] h-full w-[50px] z-[22] cursor-pointer shadow-md hover:shadow-xl rounded-full "
-        >
+    <div className="sticky top-0 z-10">
+      <Navbar fluid rounded>
+        <Navbar.Brand href="https://flowbite-react.com">
           <img
-            className="h-full imageLogo object-cover rounded-full "
-            src="https://www.creativefabrica.com/wp-content/uploads/2020/09/09/infinity-symbol-logo-design-Graphics-5369643-1.jpg"
-            alt="LOGO"
+            src="/favicon.svg"
+            className="mr-3 h-6 sm:h-9"
+            alt="Flowbite React Logo"
           />
+          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            Flowbite React
+          </span>
+        </Navbar.Brand>
+        <div className="flex md:order-2 flex-row gap-3">
+          <Button size="sm">Get started</Button>
+          <Button size="sm">Login</Button>
+          <Navbar.Toggle />
         </div>
+        <Navbar.Collapse>
+          <Navbar.Link href="#" active>
+            Home
+          </Navbar.Link>
+          <Navbar.Link href="#">About</Navbar.Link>
+          <Navbar.Link href="#">Services</Navbar.Link>
+          <Navbar.Link href="#">Pricing</Navbar.Link>
+          <Navbar.Link href="#">Contact</Navbar.Link>
+        </Navbar.Collapse>
 
-        <div
-          className="w-[50%]  flex justify-center md:gap-7 gap-4 translate-x-[40px] "
-          style={linkStyle}
-        >
-          <Button
-            className="dark:bg-gray-950 dark:text-white"
-            size="xs"
-            pill
-            color="light"
-          >
-            <a className="links " href="/login">
-              Login
-            </a>
-          </Button>
-        </div>
-      </div>
-      <div className=" mt-2 flex gap-10">
-      <a className="links" href="/Account">
-        <Avatar img="/profile.jpg" alt="avatar of Jese" rounded />
-      </a>
         <button className="w-10 h-10 ml-3" onClick={toggleMode}>
           {darkMode ? (
-            <IoSunny style={{ fontSize: "25", color: "yellow", transition: "0.9s" }} />
+            <IoSunny
+              style={{ fontSize: "25", color: "yellow", transition: "0.9s" }}
+            />
           ) : (
             <FaMoon style={{ fontSize: "25", transition: "0.9s" }} />
           )}
         </button>
-      </div>
+      </Navbar>
     </div>
   );
 };
