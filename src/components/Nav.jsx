@@ -56,21 +56,18 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
   };
   ("use client");
   return (
-    <div className="sticky top-0 z-10">
+    <div className="sticky top-0 z-10 font-kanit">
       <Navbar fluid rounded>
         <Navbar.Brand href="https://flowbite-react.com">
-          <img
-            src="/favicon.svg"
-            className="mr-3 h-6 sm:h-9"
-            alt="Flowbite React Logo"
-          />
+          <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            Flowbite React
+            Infinite
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2 flex-row gap-3">
-          <Button size="sm">Get started</Button>
-          <Button size="sm">Login</Button>
+          <Button size="sm" color="dark" className="w-[110px] h-[35px]">
+            Login
+          </Button>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>

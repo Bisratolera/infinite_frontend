@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-16 py-10">
       <Hero />
+      <Carousels />
       <Overview />
-      {/* <Seemore />
-      <Carousels /> */}
+      <Seemore />
     </div>
   );
 };

@@ -17,7 +17,7 @@ export const Carousels = () => {
           class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll h-fit w-fit"
         >
           <li>
-            <img src="/aic.svg" alt="AIC" />
+            <img src="/aic.svg" alt="AIC" className="dark:bg-white" />
           </li>
           <li>
             <img src="/1888.svg" alt="1888" />
