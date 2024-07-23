@@ -14,7 +14,7 @@ export const Hero = () => {
                 destination
               </span>
             </h2>
-            <p className="text-base text-gray-700 md:text-lg dark:text-white">
+            <p className="text-base text-gray-700 md:text-lg dark:text-white font-kanit">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae. explicabo.
@@ -24,7 +24,7 @@ export const Hero = () => {
             <a
               href="/"
               aria-label=""
-              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 font-kanit"
             >
               Learn more
               <svg
