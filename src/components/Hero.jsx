@@ -22,7 +22,7 @@ export const Hero = () => {
           </div>
           <div>
             <a
-              href="/"
+              href="/register"
               aria-label=""
               className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 font-kanit"
             >

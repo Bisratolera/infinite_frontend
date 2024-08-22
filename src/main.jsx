@@ -12,12 +12,12 @@ import Details from "./pages/Details";
 import Account from "./pages/Account";
 
 import Contact from "./components/Contact";
-import { Verfication } from "./components/Verfication";
+import Verfication from "./components/Verfication";
 import Confirmation from "./components/Confirmation";
 import { Footer } from "../src/components/Footer";
 import NotFound from "./pages/NotFound";
 import { Nav } from "./components/Nav";
-
+import VideoPage from "./pages/VideoPage";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      
+
       {
         path: "/register",
         element: <Register />,
@@ -56,6 +56,11 @@ const router = createBrowserRouter([
       {
         path: "/verify",
         element: <Verfication />,
+      },
+
+      {
+        path: "/videos",
+        element: <VideoPage />,
       },
       {
         path: "/confirmation",
@@ -111,7 +116,7 @@ const router = createBrowserRouter([
             <Route />
           </>
         ),
-      }
+      },
     ],
   },
 ]);

@@ -65,7 +65,12 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2 flex-row gap-3">
-          <Button size="sm" color="dark" className="w-[110px] h-[35px]">
+          <Button
+            size="sm"
+            color="dark"
+            className="w-[110px] h-[35px]"
+            href="/login"
+          >
             Login
           </Button>
           <Navbar.Toggle />
