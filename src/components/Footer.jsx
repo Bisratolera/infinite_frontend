@@ -66,7 +66,7 @@ export const Footer = () => {
               <a href="https://infinite-et.com/" class="hover:underline">
                 Infinite Learning Platform™
               </a>
-              . All Rights Reserved.
+              . All Rights Reserved. made with love by the frond team
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">
               <div className="flex flex-row gap-4">
