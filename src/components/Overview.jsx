@@ -76,6 +76,7 @@ const sliderSettings = {
   ],
 };
   return (
+
     <div className="flex flex-col gap-3 ml-7   font-kanit dark:bg-gray-950 dark:text-white transition-colors w-full justify-center">
       <h5 style={{ textTransform: "uppercase" }} className="ml-3 dark:text-white">
         top rated
@@ -88,6 +89,15 @@ const sliderSettings = {
               <FaChevronCircleRight style={{ fontSize: "40px" }} />
             </button>
           </div>
+     
+
+    <div className="flex flex-col gap-3 ml-7 max-w-full font-kanit dark:bg-gray-950 dark:text-white transition-colors">
+      <h5
+        style={{ textTransform: "uppercase" }}
+        className="ml-3 dark:text-white"
+      >
+        top rated
+      </h5>
       <Slider {...sliderSettings} ref={sliderRef} className="flex">
         {/*  */}
         <div className="flex flex-col dark:bg-gray-950 dark:text-white ">
@@ -130,7 +140,7 @@ const sliderSettings = {
             src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt=""
           />
-          <p >BASICS OF HTML</p>
+          <p>BASICS OF HTML</p>
         </div>
         <div className="flex flex-col">
           <img
@@ -150,7 +160,7 @@ const sliderSettings = {
         </div>
 
         </Slider>
-       
+        </div>  
     </div>
   );
 };
