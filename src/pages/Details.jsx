@@ -19,46 +19,39 @@ const Details = () => {
           </Button>
         </div>
         <div className="flex flex-row gap-3 m-3">
-          <Card
-            className=" w-[300px] h-[400px] rounded-3xl font-kanit"
-            imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc="https://flowbite-react.com/images/blog/image-1.jpg"
-            href="/courses"
-          >
-            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Data Analyst
-            </h5>
-            <div className="flex flex-row gap-9">
-              <Rating>
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star />
-                <Rating.Star filled={false} />
-              </Rating>
-            </div>
-            <div className="flex flex-col gap-1 items-center ">
-              <div className="flex flex-row gap-4">
-                <Button
-                  size="xs"
-                  color="dark"
-                  href="/courses"
-                  className="flex flex-row gap-5"
-                >
-                  Add to Cart
-                  <BsCart4 />
-                </Button>
-                <Button
-                  size="xs"
-                  color="dark"
-                  href="/courses"
-                  className="flex flex-row gap-4"
-                >
-                  Buy Now
-                </Button>
-              </div>
-            </div>
-          </Card>
+        <div
+  className="w-[350px] h-auto rounded-3xl font-kanit border shadow-md overflow-hidden"
+  href="/courses"
+>
+  <video
+    className="w-full h-52 object-cover"
+    autoPlay
+    loop
+    muted
+    playsInline
+  >
+    <source src="programing1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div className="p-4">
+    <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+      Data Analyst
+    </h5>
+    <div className="flex items-center my-2">
+      <span className="text-yellow-500 mr-1">★★★★★</span>
+      <span className="text-sm text-gray-600 dark:text-gray-400">Intermediate</span>
+    </div>
+    <div className="flex items-center justify-between">
+      <button className="text-xs font-medium text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">
+        See more
+      </button>
+      <button className="text-gray-500 dark:text-gray-400">
+        ❤️
+      </button>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
