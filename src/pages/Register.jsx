@@ -13,6 +13,8 @@ const Register = () => {
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
+    username: "",
+    gender: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -39,7 +41,9 @@ const Register = () => {
     const data = new FormData();
     data.append("fname", formData.fname);
     data.append("lname", formData.lname);
+    data.append("username", formData.username);
     data.append("email", formData.email);
+    data.append("gender", formData.gender);
     data.append("password", formData.password);
     data.append("profilePic", formData.profilePic);
 
@@ -47,7 +51,7 @@ const Register = () => {
       await toast.promise(
         axios.post(`${BASE_URL}/user/signup`, data, {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "multipart/formdata",
           },
         }),
         {
@@ -149,6 +153,20 @@ const Register = () => {
                     className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
+                <div className="flex flex-col gap-1">
+                  <Label value="Gender" />
+                  <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleInputChange}
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
+                  >
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+
                 <div className="flex flex-col gap-1">
                   <Label value="Password" />
                   <input

@@ -73,6 +73,14 @@ export const Nav = ({ isDarkMode, toggleDarkMode }) => {
           >
             Login
           </Button>
+          <Button
+            size="sm"
+            color="dark"
+            className="w-[110px] h-[35px]"
+            href="/account"
+          >
+            My Learning
+          </Button>
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
