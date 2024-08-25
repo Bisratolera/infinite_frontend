@@ -21,7 +21,7 @@ function App() {
     <div
       className={`App dark:bg-gray-950 dark:text-white ${
         shouldHideNavAndFooter
-          ? "min-h-screen flex items-center justify-center"
+          ? "min-h-screen flex "
           : ""
       }`}
     >
