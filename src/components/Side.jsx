@@ -8,27 +8,23 @@ import { IoMdNotifications } from 'react-icons/io';
 import { FcBarChart } from 'react-icons/fc';
 import { AiFillBook } from 'react-icons/ai';
 import { TiMessageTyping } from 'react-icons/ti';
-import { MdOutlineAnnouncement } from "react-icons/md";
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-// import { BASE_URL } from "../../utils/utils";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 const Side = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
-  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false); // State for logout confirmation
-
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
   const sidebarRef = useRef(null);
   const navigate = useNavigate();
 
-  // Toggle the sidebar
   const toggleSidebar = (event) => {
     event.stopPropagation();
     setIsOpen(!isOpen);
   };
 
-  // Close sidebar when clicking outside
   const handleClickOutside = (event) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target) && isOpen) {
       setIsOpen(false);
@@ -49,62 +45,55 @@ const Side = () => {
   const handleLogout = () => {
     setShowLogoutConfirm(true);
   };
+
   const confirmLogout = () => {
-    // Clear local storage or any authentication tokens
     localStorage.removeItem("token");
     localStorage.removeItem("providerId");
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem('role');
-
-    // Redirect to home page or login page
     navigate('/');
-
-    // Optionally, you can also refresh the page
     window.location.reload();
   };
 
-  // Cancel logout action
   const cancelLogout = () => {
     setShowLogoutConfirm(false);
   };
 
-//fetch provider data 
   const [providerProfile, setPrividerProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  useEffect(() => {
-  fetchUserProfile();
-}, []);
- const fetchUserProfile = async () => {
-  setLoading(true);
-  try {
-    const token = localStorage.getItem('token');
-    const providerId = localStorage.getItem('providerId');
-    if (!providerId) {
-      throw new Error("provider ID not found.");
-    }
-    // const response = await axios.get(`${BASE_URL}/provider/profile/${providerId}`, {
-    //   headers: {
-    //     'Authorization': `Bearer ${token}`,
-    //   },
-    // });
-    console.log("*".repeat(100))
-    // console.log(response)
-    console.log(response)
-    console.log("*".repeat(100))
-    console.log(response.data); // Add this line
-    
-    setPrividerProfile(response.data.userProfileData);
-  } catch (err) {
-    // console.log("=".repeat(100))
-    // console.log(err)
-    // console.log("=".repeat(100))
 
-    setError(err.message);
-  } finally {
-    setLoading(false);
-  }
-};
+  useEffect(() => {
+    fetchUserProfile();
+  }, []);
+
+  const fetchUserProfile = async () => {
+    setLoading(true);
+    try {
+      const token = localStorage.getItem('token');
+      const providerId = localStorage.getItem('providerId');
+      if (!providerId) {
+        throw new Error("provider ID not found.");
+      }
+      // const response = await axios.get(`${BASE_URL}/provider/profile/${providerId}`, {
+      //   headers: {
+      //     'Authorization': `Bearer ${token}`,
+      //   },
+      // });
+      console.log("*".repeat(100));
+      // console.log(response);
+      console.log(response);
+      console.log("*".repeat(100));
+      console.log(response.data);
+
+      setPrividerProfile(response.data.userProfileData);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <button
@@ -129,11 +118,11 @@ const Side = () => {
       <aside
         id="logo-sidebar"
         ref={sidebarRef}
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-50 dark:bg-gray-800 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 sm:static sm:block`}
+        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-50 dark:bg-gray-800 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 sm:static`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4">
-          <a href="/" className="flex items-start space-x-3 ml-16 text-xl mb-10  font-bold">
+          <a href="/" className="flex items-start space-x-3 ml-16 text-xl mb-10 font-bold">
             Infinite 
           </a>
 
@@ -189,88 +178,46 @@ const Side = () => {
                 className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <CgProfile className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Customers</span>
-              </a>
-            </li>
-            <li className="w-full">
-              <a
-                href="#"
-                className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <IoMdNotifications className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Notifications</span>
-              </a>
-            </li>
-            <li className='pb-5 border-b-2 w-full'>
-              <a
-                href="#"
-                className="flex items-center font-bold p-2 gap-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <FcBarChart className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl ">Status</span>
-              </a>
-            </li>
-            <li className='w-full'>
-              <a
-                href="#"
-                className="flex items-center font-bold p-2 gap-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <CiSettings className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Settings</span>
-              </a>
-            </li>
-            <li className='w-full'>
-              <a
-                href="#"
-                className="flex items-center font-bold p-2 gap-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <TiMessageTyping className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Message</span>
-              </a>
-            </li>
-            {/* <li>
-              <a
-                href="#"
-                className="flex items-center font-bold p-2 gap-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <MdOutlineAnnouncement className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Announcement</span>
-              </a>
-            </li> */}
-            {/* <li className='flex cursor-pointer' onClick={handleLogout}>
-              <CiLogout className="text-2xl text-red-600" />
-              <span className="flex-1 ml-3 whitespace-nowrap text-red-600 text-xl">Log out</span>
-            </li> */}
-          </ul>
-        </div>
-      </aside>
-
-      {/* Logout Confirmation Modal
-      {showLogoutConfirm && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-md shadow-md">
-            <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white">
-              Are you sure you want to log out?
-            </h2>
-            <div className="flex justify-end gap-4">
-              <button
-                onClick={cancelLogout}
-                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-md"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={confirmLogout}
-                className="px-4 py-2 bg-red-600 text-white rounded-md"
-              >
-                Log Out
-              </button>
+                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Profile</span>
+                 </a>
+                  </li>
+                   <li className="w-full">
+                     <a href="#" className="flex items-center font-bold gap-3 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" > 
+                      <CiSettings className="text-2xl text-[#696C73]" /> 
+                      <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Settings</span>
+                       </a> 
+                       </li>
+                        <li className="w-full">
+                         <a href="#" className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" > 
+                        <CiLogout className="text-2xl text-[#696C73]" /> 
+                       <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Log out</span> 
+                      </a>
+                    </li> 
+                   </ul>
+                 </div> 
+          </aside>
+                {showLogoutConfirm && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                <p className="text-lg text-gray-900 dark:text-gray-200 mb-4">Are you sure you want to log out?</p>
+                <div className="flex justify-end">
+                  <button
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 mr-2"
+                    onClick={confirmLogout}
+                  >
+                    Yes
+                  </button>
+                  <button
+                    className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 dark:bg-gray-600 dark:text-gray-200 dark:hover:bg-gray-500"
+                    onClick={cancelLogout}
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      )} */}
-    </>
-  );
-};
+  )}
+</>
+); };
 
 export default Side;

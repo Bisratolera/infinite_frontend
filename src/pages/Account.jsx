@@ -1,9 +1,9 @@
 import React from "react";
 import VideoPage from "./VideoPage";
-import  Side  from "../components/Side";
+import Side from "../components/Side";
 import CourseTable from "../components/CourseTable";
 import { Button, Card, TextInput } from "flowbite-react";
-import { FaSearch, FaRegBell,FaWalking,FaClock } from "react-icons/fa";
+import { FaSearch, FaRegBell, FaWalking, FaClock } from "react-icons/fa";
 import { Doughnut } from 'react-chartjs-2';
 import { MdBookmarkAdd } from "react-icons/md";
 import { SiNike } from "react-icons/si";
@@ -14,7 +14,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-  
 const Account = () => {
   const data = {
     labels: ['Design', 'Code', 'Business', 'Data'],
@@ -36,6 +35,7 @@ const Account = () => {
       },
     },
   };
+
   const courses = [
     {
       category: 'DESIGN',
@@ -64,127 +64,64 @@ const Account = () => {
   ];
 
   return (
-    <section className="w-full h-full items-start justify-start">
-      <div className="flex flex-row  gap-2 dark:bg-gray-950 dark:text-white transition-colors ">
+    <section className="overflow-hidden">
+      <div className="flex flex-col lg:flex-row gap-4 dark:bg-gray-950 dark:text-white transition-colors">
         <div className="">
           <Side />
-
         </div>
-        <div className="flex  flex-col gap-2 pl-40">
-        {/* Search bar */}
-        <form className="max-w-md mx-auto">   
-            <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+        <div className="flex w-full flex-col gap-4 px-4">
+          {/* Search bar */}
+          <form className="w-full lg:max-w-md mx-auto">
+            <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+              Search
+            </label>
             <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" ariaHidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                    </svg>
-                </div>
-                <input type="search" id="default-search" className="block w-[500px] p-2 mt-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="try search programing course" required />
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <FaSearch className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                className="block w-full lg:w-[500px] p-2 mt-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Try searching programming courses"
+                required
+              />
             </div>
-        </form>
-        {/* Dash bord  */}
-        <div className="flex flex-col gap-2">
+          </form>
+
+          {/* Dashboard */}
+          <div className="flex flex-col gap-4">
             <h2 className="text-xl font-bold dark:text-white">Dashboard</h2>
-            <div className="flex flex-row gap-8 m-3 ">
-          <card
-            className=" w-[170px] flex bg-white h-[120px]  p-5  rounded-xl font-kanit shadow-sm shadow-gray-600  dark:shadow-cyan-500"
-          >
-           
-            <div className="flex flex-col gap-4">
-            <p className="w-full flex gap-2  text-xl"> <FaWalking className="bg-blue-600 rounded-md text-2xl text-white p-1 "/>OnGoing</p>
-            <p className="text-4xl font-medium">5</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <CardComponent icon={<FaWalking className="bg-blue-600 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="5" />
+              <CardComponent icon={<SiNike className="bg-green-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="15" />
+              <CardComponent icon={<PiCertificateFill className="bg-yellow-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="45" />
+              <CardComponent icon={<FaClock className="bg-purple-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="25" />
             </div>
-          </card>
-          <card
-            className=" w-[170px] flex bg-white h-[120px]  p-5  rounded-xl font-kanit shadow-sm shadow-gray-600  dark:shadow-cyan-500"
-          >
-           
-            <div className="flex flex-col gap-4">
-            <p className="w-full flex gap-2  text-xl"> <SiNike className="bg-green-500 rounded-md text-2xl text-white p-1 "/>OnGoing</p>
-            <p className="text-4xl font-medium">15</p>
-            </div>
-          </card>
-          <card
-            className=" w-[170px] flex bg-white h-[120px]  p-5  rounded-xl font-kanit shadow-sm shadow-gray-600  dark:shadow-cyan-500"
-          >
-           
-            <div className="flex flex-col gap-4">
-            <p className="w-full flex gap-2  text-xl"> <PiCertificateFill className="bg-yellow-500 rounded-md text-2xl text-white p-1 "/>OnGoing</p>
-            <p className="text-4xl font-medium">45</p>
-            </div>
-          </card>
-          <card
-            className=" w-[170px] flex bg-white h-[120px]  p-5  rounded-xl font-kanit shadow-sm shadow-gray-600  dark:shadow-cyan-500"
-          >
-           
-            <div className="flex flex-col gap-4">
-            <p className="w-full flex gap-2  text-xl"> <FaClock className="bg-purple-500 rounded-md text-2xl text-white p-1 "/>OnGoing</p>
-            <p className="text-4xl font-medium">25</p>
-            </div>
-          </card>
-         
-        </div>
           </div>
-          {/* Couser Overview */}
-          <div className="flex flex-col gap-2">
+
+          {/* Course Overview */}
+          <div className="flex flex-col gap-4">
             <h2 className="text-xl font-bold dark:text-white">Course Overview</h2>
-            <div className="flex flex-row gap-8 m-3 ">
-          <card
-            className=" w-[250px] h-[325px] bg-white   rounded-3xl font-kanit shadow-md shadow-gray-600 p-2 dark:shadow-cyan-500"
-          >
-            <img src="pexels-shkrabaanthony-5475784.jpg" className="h-44 rounded-xl" alt="imm" />
-            <div className="mt-2">
-            <p className="w-full flex justify-between  text-xl">Design <MdBookmarkAdd className="p-2 bg-gray-900 text-4xl text-white rounded-full"/></p>
-            <h5 className="text-md font-normal tracking-tight text-gray-900 dark:text-white">
-             Create 3D Bender with <br /> bender 
-            </h5>
-            <p className="text-gray-400">l6 lesson . 24 hour </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <CourseOverviewCard imageUrl="pexels-shkrabaanthony-5475784.jpg" title="Create 3D Bender with Blender" category="Design" />
+              <CourseOverviewCard imageUrl="pexels-shkrabaanthony-5475784.jpg" title="Create 3D Bender with Blender" category="Design" />
+              <CourseOverviewCard imageUrl="pexels-shkrabaanthony-5475784.jpg" title="Create 3D Bender with Blender" category="Design" />
             </div>
-           
-          </card>
-          <card
-            className=" w-[250px] h-[325px] bg-white   rounded-3xl font-kanit shadow-md shadow-gray-600 p-2 dark:shadow-cyan-500"
-          >
-            <img src="pexels-shkrabaanthony-5475784.jpg" className="h-44 rounded-xl" alt="imm" />
-            <div className="mt-2">
-            <p className="w-full flex justify-between  text-xl">Design <MdBookmarkAdd className="p-2 bg-gray-900 text-4xl text-white rounded-full"/></p>
-            <h5 className="text-md font-normal tracking-tight text-gray-900 dark:text-white">
-             Create 3D Bender with <br /> bender 
-            </h5>
-            <p className="text-gray-400">l6 lesson . 24 hour </p>
-            </div>
-           
-          </card>
-          <card
-            className=" w-[250px] h-[325px] bg-white   rounded-3xl font-kanit shadow-md shadow-gray-600 p-2 dark:shadow-cyan-500"
-          >
-            <img src="pexels-shkrabaanthony-5475784.jpg" className="h-44 rounded-xl" alt="imm" />
-            <div className="mt-2">
-            <p className="w-full flex justify-between  text-xl">Design <MdBookmarkAdd className="p-2 bg-gray-900 text-4xl text-white rounded-full"/></p>
-            <h5 className="text-md font-normal tracking-tight text-gray-900 dark:text-white">
-             Create 3D Bender with <br /> bender 
-            </h5>
-            <p className="text-gray-400">l6 lesson . 24 hour </p>
-            </div>
-           
-          </card>
-        </div>
-          </div>
-{/* My course */}
-
-        <div className="flex flex-col gap-2">
-            <h2 className="text-xl font-bold dark:text-white">My Course </h2>
-            <div className="flex flex-row gap-8 m-3 ">
-          <CourseTable />
-        </div>
           </div>
 
+          {/* My Course */}
+          <div className="flex flex-col gap-4">
+            <h2 className="text-xl font-bold dark:text-white">My Course</h2>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <CourseTable />
+            </div>
+          </div>
         </div>
 
-      <section className="mt-10 flex flex-col">
-      <h1 className="text-xl font-bold">Course Topic</h1>
-      <div className=" w-[350px]  bg-white rounded-lg shadow p-6 relative">
+        <section className="mt-10 flex flex-col gap-4">
+          <h1 className="text-xl font-bold">Course Topic</h1>
+          <div className="w-full lg:w-[350px] bg-white rounded-lg shadow p-6 relative mx-auto">
             <div className="relative flex items-center justify-center">
               <Doughnut data={data} options={options} />
               <div className="absolute flex flex-col items-center">
@@ -193,22 +130,10 @@ const Account = () => {
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-600">
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 bg-purple-300 rounded-full"></span>
-                <span>Design (40%)</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 bg-purple-400 rounded-full"></span>
-                <span>Code (30%)</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 bg-purple-500 rounded-full"></span>
-                <span>Business (20%)</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 bg-purple-600 rounded-full"></span>
-                <span>Data (10%)</span>
-              </div>
+              <LegendItem color="bg-purple-300" label="Design (40%)" />
+              <LegendItem color="bg-purple-400" label="Code (30%)" />
+              <LegendItem color="bg-purple-500" label="Business (20%)" />
+              <LegendItem color="bg-purple-600" label="Data (10%)" />
             </div>
           </div>
           <div className="max-w-md mx-auto mt-3">
@@ -217,12 +142,43 @@ const Account = () => {
               <ContinueLearningCard key={index} {...course} />
             ))}
           </div>
-      </section>
-
+        </section>
       </div>
-      {/* <VideoPage /> */}
     </section>
   );
 };
+
+const CardComponent = ({ icon, title, count }) => (
+  <div className="w-[170px] bg-white h-[120px] flex flex-col justify-between p-4 rounded-xl shadow-sm dark:shadow-cyan-500">
+    <div className="flex items-center gap-2 text-xl">
+      {icon}
+      <p>{title}</p>
+    </div>
+    <p className="text-4xl font-medium">{count}</p>
+  </div>
+);
+
+const CourseOverviewCard = ({ imageUrl, title, category }) => (
+  <div className="w-[250px] h-[325px] bg-white rounded-3xl shadow-md p-2 dark:shadow-cyan-500">
+    <img src={imageUrl} className="h-44 rounded-xl" alt="course" />
+    <div className="mt-2">
+      <p className="w-full flex justify-between text-xl">
+        {category}
+        <MdBookmarkAdd className="p-2 bg-gray-900 text-4xl text-white rounded-full" />
+      </p>
+      <h5 className="text-md font-normal tracking-tight text-gray-900 dark:text-white">
+        {title}
+      </h5>
+      <p className="text-gray-400">16 lessons . 24 hours</p>
+    </div>
+  </div>
+);
+
+const LegendItem = ({ color, label }) => (
+  <div className="flex items-center space-x-2">
+    <span className={`w-3 h-3 ${color} rounded-full`} />
+    <span>{label}</span>
+  </div>
+);
 
 export default Account;
