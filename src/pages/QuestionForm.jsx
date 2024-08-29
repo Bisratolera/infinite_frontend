@@ -154,8 +154,8 @@ const QuestionForm = () => {
                 </div>
 
                 {/* Preview question  */}
-                <div className="w-2/3 bg-white p-6 rounded-lg shadow-lg">
-                    <h2 className="text-xl font-semibold mb-4">Question Preview</h2>
+                <div className="w-2/3 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h2 className="text-xl font-semibold mb-4 dark:text-white">Question Preview</h2>
                     <div className="text-lg mb-4">{question}</div>
 
                     {questionType === 'multiple-choice' && (
@@ -202,8 +202,8 @@ const QuestionForm = () => {
             </section>
 
             {/* Right Panel */}
-            <div className="w-full bg-white p-6 rounded-lg shadow-lg">
-                <h2 className="text-xl font-semibold mb-4">Exam</h2>
+            <div className="w-full bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                <h2 className="text-xl font-semibold mb-4 dark:text-white">Exam</h2>
                 {isExamSubmitted ? (
                     <div>
                         {savedQuestions.map((question, index) => (
@@ -228,7 +228,7 @@ const QuestionForm = () => {
                                 )}
                                 {question.questionType === 'true-false' && (
                                     <div>
-                                        <label className={`flex items-center space-x-2 mb-2 ${studentAnswers[index] === 'true' && studentAnswers[index] === question.correctAnswer ? 'text-green-600' : studentAnswers[index] === 'true' ? 'text-red-600' : ''}`}>
+                                        <label className={`flex items-center space-x-2 mb-2 dark:text-white ${studentAnswers[index] === 'true' && studentAnswers[index] === question.correctAnswer ? 'text-green-600' : studentAnswers[index] === 'true' ? 'text-red-600' : ''}`}>
                                             <input
                                                 type="radio"
                                                 name={`question-${index}`}
@@ -239,7 +239,7 @@ const QuestionForm = () => {
                                             />
                                             <span>True</span>
                                         </label>
-                                        <label className={`flex items-center space-x-2 mb-2 ${studentAnswers[index] === 'false' && studentAnswers[index] === question.correctAnswer ? 'text-green-600' : studentAnswers[index] === 'false' ? 'text-red-600' : ''}`}>
+                                        <label className={`flex items-center space-x-2 mb-2 dark:text-white ${studentAnswers[index] === 'false' && studentAnswers[index] === question.correctAnswer ? 'text-green-600' : studentAnswers[index] === 'false' ? 'text-red-600' : ''}`}>
                                             <input
                                                 type="radio"
                                                 name={`question-${index}`}
@@ -262,7 +262,7 @@ const QuestionForm = () => {
                     <div>
                         {savedQuestions.map((question, index) => (
                             <div key={index} className="mb-6">
-                                <h3 className="text-lg font-semibold mb-2">{`Question ${index + 1}: ${question.question}`}</h3>
+                                <h3 className="text-lg font-semibold mb-2 dark:text-white">{`Question ${index + 1}: ${question.question}`}</h3>
                                 {question.questionType === 'multiple-choice' && (
                                     <div>
                                         {question.options.map((option, i) => (
