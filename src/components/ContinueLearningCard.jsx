@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContinueLearningCard = ({ category, title, completedLessons, totalLessons, percentage, imageUrl }) => {
   return (
-    <div className="flex items-center p-4 bg-white rounded-lg shadow-md mb-4">
+    <div className="flex items-center p-4 bg-white rounded-lg shadow-md mb-4 dark:text-white dark:bg-gray-700">
       <img src={imageUrl} alt={title} className="w-16 h-16 rounded-lg" />
       <div className="ml-4 flex-1">
         <div className="text-sm text-gray-500 uppercase font-bold">{category}</div>

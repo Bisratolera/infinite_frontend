@@ -83,11 +83,13 @@ const Login = () => {
     }
   }, [theme]);
 
-
+  const handleGoBack = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
   return (
     <>
       <Toaster />
-      <div className="flex flex-row gap-40 mt-12 ml-8 dark-duration justify-center transition-colors dark:bg-gray-950">
+      <div className="flex flex-row gap-40 mt-12 ml-8 dark-duration w-full justify-center transition-colors dark:bg-gray-950">
         <Lottie
           animationData={lottieJson}
           play
@@ -125,7 +127,7 @@ const Login = () => {
                 <Button pill size="md" color="dark" type="submit">
                   Login
                 </Button>
-                <Button pill size="md" color="light" type="button">
+                <Button onClick={handleGoBack} pill size="md" color="light" type="button">
                   Cancel
                 </Button>
               </div>

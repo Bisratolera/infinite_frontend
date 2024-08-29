@@ -78,17 +78,17 @@ const sliderSettings = {
   return (
 
     <div className="flex flex-col gap-3 ml-7   font-kanit dark:bg-gray-950 dark:text-white transition-colors w-full justify-center">
-      <h5 style={{ textTransform: "uppercase" }} className="ml-3 dark:text-white">
+      {/* <h5 style={{ textTransform: "uppercase" }} className="ml-3 dark:text-white">
         top rated
-      </h5>
-      <div className="mt-4 flex">
+      </h5> */}
+      {/* <div className="mt-4 flex">
             <button className="font-bold py-2 px-4 rounded-l" onClick={previous}>
               <FaChevronCircleLeft style={{ fontSize: "40px" }} />
             </button>
             <button className="font-bold py-2 px-4 rounded-r" onClick={next}>
               <FaChevronCircleRight style={{ fontSize: "40px" }} />
             </button>
-          </div>
+      </div> */}
      
 
     <div className="flex flex-col gap-3 ml-7 max-w-full font-kanit dark:bg-gray-950 dark:text-white transition-colors">

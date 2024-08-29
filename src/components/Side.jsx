@@ -118,7 +118,7 @@ const Side = () => {
       <aside
         id="logo-sidebar"
         ref={sidebarRef}
-        className={`fixed top-0 left-0 z-50 h-screen w-64 bg-gray-50 dark:bg-gray-800 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 sm:static`}
+        className={`fixed top-0 left-0  z-50 h-screen w-64 bg-gray-50 dark:bg-gray-800 transition-transform transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 sm:static`}
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4">
@@ -151,7 +151,7 @@ const Side = () => {
                 className="flex items-center font-bold p-2 text-gray-900 rounded-lg gap-3 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <CiMoneyBill className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Earnings</span>
+                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Earnings</span>
               </a>
             </li>
             <li className="w-full">
@@ -160,7 +160,7 @@ const Side = () => {
                 className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <GrTransaction className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Transactions</span>
+                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Transactions</span>
               </a>
             </li>
             <li className="w-full">
@@ -169,7 +169,7 @@ const Side = () => {
                 className="flex items-center font-bold gap-3 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <AiFillBook className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Packages</span>
+                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Packages</span>
               </a>
             </li>
             <li className="w-full">
@@ -178,19 +178,19 @@ const Side = () => {
                 className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <CgProfile className="text-2xl text-[#696C73]" />
-                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Profile</span>
+                <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Profile</span>
                  </a>
                   </li>
                    <li className="w-full">
                      <a href="#" className="flex items-center font-bold gap-3 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" > 
                       <CiSettings className="text-2xl text-[#696C73]" /> 
-                      <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Settings</span>
+                      <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Settings</span>
                        </a> 
                        </li>
                         <li className="w-full">
                          <a href="#" className="flex items-center font-bold p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group" > 
                         <CiLogout className="text-2xl text-[#696C73]" /> 
-                       <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl">Log out</span> 
+                       <span className="flex-1 ml-3 whitespace-nowrap text-[#696C73] text-xl dark:text-white">Log out</span> 
                       </a>
                     </li> 
                    </ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import VideoPage from "./VideoPage";
 import Side from "../components/Side";
 import CourseTable from "../components/CourseTable";
@@ -15,6 +15,35 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Account = () => {
+// Dark mode function 
+  const [theme, setTheme] = useState("Light");
+
+  // Initialize dark mode state from localStorage
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  const toggleMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    // Save dark mode preference to localStorage
+    localStorage.setItem("darkMode", newMode);
+  };
+
+  useEffect(() => {
+    // Use Tailwind dark mode utility classes on the body element
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  useEffect(() => {
+    if (theme === "") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+
   const data = {
     labels: ['Design', 'Code', 'Business', 'Data'],
     datasets: [
@@ -64,7 +93,7 @@ const Account = () => {
   ];
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden dark:bg-gray-950">
       <div className="flex flex-col lg:flex-row gap-4 dark:bg-gray-950 dark:text-white transition-colors">
         <div className="">
           <Side />
@@ -92,8 +121,8 @@ const Account = () => {
           {/* Dashboard */}
           <div className="flex flex-col gap-4">
             <h2 className="text-xl font-bold dark:text-white">Dashboard</h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <CardComponent icon={<FaWalking className="bg-blue-600 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="5" />
+            <div className="flex flex-wrap gap-4 justify-center ">
+              <CardComponent icon={<FaWalking className="bg-blue-600  rounded-md text-2xl text-white p-1" />} title="OnGoing" count="5" />
               <CardComponent icon={<SiNike className="bg-green-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="15" />
               <CardComponent icon={<PiCertificateFill className="bg-yellow-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="45" />
               <CardComponent icon={<FaClock className="bg-purple-500 rounded-md text-2xl text-white p-1" />} title="OnGoing" count="25" />
@@ -120,16 +149,16 @@ const Account = () => {
         </div>
 
         <section className="mt-10 flex flex-col gap-4">
-          <h1 className="text-xl font-bold">Course Topic</h1>
-          <div className="w-full lg:w-[350px] bg-white rounded-lg shadow p-6 relative mx-auto">
+          <h1 className="text-xl font-bold dark:text-white">Course Topic</h1>
+          <div className="w-full lg:w-[350px] bg-white dark:text-white dark:bg-gray-700 rounded-lg shadow p-6 relative mx-auto">
             <div className="relative flex items-center justify-center">
               <Doughnut data={data} options={options} />
               <div className="absolute flex flex-col items-center">
-                <h2 className="text-3xl font-bold">42</h2>
-                <p className="text-gray-500">Total Course</p>
+                <h2 className="text-3xl font-bold dark:text-white">42</h2>
+                <p className="text-gray-500 dark:text-white">Total Course</p>
               </div>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-600">
+            <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-600 dark:text-white">
               <LegendItem color="bg-purple-300" label="Design (40%)" />
               <LegendItem color="bg-purple-400" label="Code (30%)" />
               <LegendItem color="bg-purple-500" label="Business (20%)" />
@@ -137,7 +166,7 @@ const Account = () => {
             </div>
           </div>
           <div className="max-w-md mx-auto mt-3">
-            <h2 className="text-xl font-bold mb-4">Continue Learning</h2>
+            <h2 className="text-xl font-bold mb-4 dark:text-white">Continue Learning</h2>
             {courses.map((course, index) => (
               <ContinueLearningCard key={index} {...course} />
             ))}
@@ -149,7 +178,7 @@ const Account = () => {
 };
 
 const CardComponent = ({ icon, title, count }) => (
-  <div className="w-[170px] bg-white h-[120px] flex flex-col justify-between p-4 rounded-xl shadow-sm dark:shadow-cyan-500">
+  <div className="w-[170px] dark:text-white dark:bg-gray-700 bg-white h-[120px] flex flex-col justify-between p-4 rounded-xl shadow-sm dark:shadow-cyan-500">
     <div className="flex items-center gap-2 text-xl">
       {icon}
       <p>{title}</p>
@@ -159,7 +188,7 @@ const CardComponent = ({ icon, title, count }) => (
 );
 
 const CourseOverviewCard = ({ imageUrl, title, category }) => (
-  <div className="w-[250px] h-[325px] bg-white rounded-3xl shadow-md p-2 dark:shadow-cyan-500">
+  <div className="w-[250px] h-[325px] bg-white dark:text-white dark:bg-gray-700 rounded-3xl shadow-md p-2 dark:shadow-cyan-500">
     <img src={imageUrl} className="h-44 rounded-xl" alt="course" />
     <div className="mt-2">
       <p className="w-full flex justify-between text-xl">
@@ -175,7 +204,7 @@ const CourseOverviewCard = ({ imageUrl, title, category }) => (
 );
 
 const LegendItem = ({ color, label }) => (
-  <div className="flex items-center space-x-2">
+  <div className="flex items-center space-x-2 dark:text-white">
     <span className={`w-3 h-3 ${color} rounded-full`} />
     <span>{label}</span>
   </div>

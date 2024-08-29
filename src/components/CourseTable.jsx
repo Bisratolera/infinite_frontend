@@ -32,30 +32,30 @@ const CourseTable = () => {
     <div className="overflow-x-auto">
       <table className="min-w-full table-auto">
         <thead>
-          <tr className="bg-gray-100">
-            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Course Name</th>
-            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Lessons</th>
-            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Status</th>
-            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Level</th>
-            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700">Category</th>
+          <tr className="bg-gray-100 dark:bg-gray-700 ">
+            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 dark:text-white ">Course Name</th>
+            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 dark:text-white">Lessons</th>
+            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 dark:text-white">Status</th>
+            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 dark:text-white">Level</th>
+            <th className="px-6 py-3 text-left text-sm font-medium text-gray-700 dark:text-white">Category</th>
           </tr>
         </thead>
         <tbody>
           {courses.map((course, index) => (
-            <tr key={index} className="border-b">
+            <tr key={index} className="border-b ">
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 flex items-center space-x-3">
               <img src={`/pexels-shkrabaanthony-5475784.jpg`} alt="icon" className="w-8 h-8" />
 
-                <span>{course.name}</span>
+                <span className="dark:text-white">{course.name}</span>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{course.lessons}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-white">{course.lessons}</td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${course.statusColor}`}>
+                <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full dark:text-white ${course.statusColor}`}>
                   {course.status}
                 </span>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{course.level}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">{course.category}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-white">{course.level}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-white">{course.category}</td>
             </tr>
           ))}
         </tbody>

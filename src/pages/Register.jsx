@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, Label, Button } from "flowbite-react";
 import lottieJson from "../assets/animations/signup_animation.json";
@@ -79,11 +79,40 @@ const Register = () => {
       console.error("Error in signup: ", error);
     }
   };
+  const [theme, setTheme] = useState("Light");
 
+  // Initialize dark mode state from localStorage
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  const toggleMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    // Save dark mode preference to localStorage
+    localStorage.setItem("darkMode", newMode);
+  };
+
+  useEffect(() => {
+    // Use Tailwind dark mode utility classes on the body element
+    document.body.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  useEffect(() => {
+    if (theme === "") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleGoBack = () => {
+    navigate(-1); // Navigate back to the previous page
+  };
   return (
     <>
       <Toaster />
-      <div className="font-kanit transition-colors h-full">
+      <div className="font-kanit transition-colors w-full flex justify-center">
         <div className="flex flex-col md:flex-row gap-16 mt-12 mx-auto max-w-screen-lg ">
           <Card className="object-cover rounded-3xl shadow-lg dark:shadow-cyan-500 w-full md:w-auto h-auto mr-4 shadow-gray-500/50">
             <form
@@ -118,7 +147,7 @@ const Register = () => {
                       name="fname"
                       value={formData.fname}
                       onChange={handleInputChange}
-                      className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white  hover:dark:shadow-cyan-500 duration-200"
+                      className="border-black rounded-3xl h-[35px] dark:bg-gray-700 shadow-lg dark:text-white  hover:dark:shadow-cyan-500 duration-200"
                     />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -128,7 +157,7 @@ const Register = () => {
                       name="lname"
                       value={formData.lname}
                       onChange={handleInputChange}
-                      className="border-black rounded-3xl h-[35px] dark:bg-gray-900 shadow-lg dark:text-white hover:dark:shadow-cyan-500 duration-200"
+                      className="border-black rounded-3xl h-[35px] dark:bg-gray-700 shadow-lg dark:text-white hover:dark:shadow-cyan-500 duration-200"
                     />
                   </div>
                 </div>
@@ -140,7 +169,7 @@ const Register = () => {
                     name="username"
                     value={formData.username}
                     onChange={handleInputChange}
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-700 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -150,7 +179,7 @@ const Register = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-700 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
@@ -159,7 +188,7 @@ const Register = () => {
                     name="gender"
                     value={formData.gender}
                     onChange={handleInputChange}
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-700 dark:text-white shadow-lg hover:dark:shadow-cyan-500 duration-200"
                   >
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
@@ -174,7 +203,7 @@ const Register = () => {
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-700 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
                 <div className="flex flex-col gap-1 ">
@@ -184,7 +213,7 @@ const Register = () => {
                     name="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
-                    className="border-black rounded-3xl h-[35px] dark:bg-gray-900 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
+                    className="border-black rounded-3xl h-[35px] dark:bg-gray-700 dark:text-white shadow-lg  hover:dark:shadow-cyan-500 duration-200"
                   />
                 </div>
               </div>
@@ -192,7 +221,7 @@ const Register = () => {
                 <input
                   type="checkbox"
                   className="mr-2 "
-                  id="termsCheckbox dark:bg-gray-900 dark:text-white shadow-lg "
+                  id="termsCheckbox dark:bg-gray-700 dark:text-white shadow-lg "
                   required
                 />
                 <label htmlFor="termsCheckbox">
@@ -205,7 +234,7 @@ const Register = () => {
                 <Button pill="true" size="md" color="dark" type="submit">
                   Sign Up
                 </Button>
-                <Button pill="true" size="md" color="light">
+                <Button  onClick={handleGoBack} pill="true" size="md" color="light">
                   Cancel
                 </Button>
               </div>
