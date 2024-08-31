@@ -77,13 +77,13 @@ export const Overview = () => {
       {
         breakpoint: 955,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
         breakpoint: 820,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
         },
       },
       {
@@ -115,7 +115,7 @@ export const Overview = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 ml-7 font-kanit dark:bg-gray-950 dark:text-white transition-colors w-full justify-center">
+    <div className="flex flex-col gap-3  font-kanit dark:bg-gray-950 dark:text-white transition-colors w-full justify-center overflow-hidden ">
       <div className="flex flex-col gap-3 font-kanit dark:bg-gray-950 dark:text-white transition-colors">
         <h5
           style={{ textTransform: "uppercase" }}
@@ -127,7 +127,7 @@ export const Overview = () => {
           {cardData.map((card, index) => (
             <div key={index} className="flex flex-row gap-3 m-3">
               <div
-                className="w-[350px] h-auto rounded-3xl font-kanit border shadow-md overflow-hidden"
+                className="w-[320px] h-auto rounded-3xl font-kanit border shadow-md overflow-hidden"
                 href="/courses"
               >
                 <video
@@ -154,12 +154,13 @@ export const Overview = () => {
                   <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:gray-blue-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Buy now</a>
 
                     <button className="text-xs font-medium text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">
-                      See more
+                      save
                     </button>
-                    {/* <button className="text-gray-500 dark:text-gray-400">
+                    </div>
+                    <button className="text-gray-500 mt-2 dark:text-gray-400">
                       ❤️
-                    </button> */}
-                  </div>
+                    </button>
+                  
                 </div>
               </div>
             </div>
