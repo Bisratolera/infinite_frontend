@@ -35,6 +35,18 @@ const cardData = [
     level: "Advanced",
     videoSrc: "programing1.mp4",
   },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
   // Add more cards as needed
 ];
 
@@ -57,15 +69,21 @@ export const Overview = () => {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1666,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
         breakpoint: 1366,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         },
       },
       {
