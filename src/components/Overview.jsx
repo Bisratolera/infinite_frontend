@@ -1,59 +1,189 @@
-import React from "react";
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+
+const cardData = [
+  {
+    title: "Data Analyst",
+    rating: "★★★★★",
+    level: "Intermediate",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Web Developer",
+    rating: "★★★★★",
+    level: "Beginner",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  {
+    title: "Machine Learning",
+    rating: "★★★★☆",
+    level: "Advanced",
+    videoSrc: "programing1.mp4",
+  },
+  // Add more cards as needed
+];
 
 export const Overview = () => {
-  return (
-    <div className="flex flex-col gap-3 ml-7 overflow-x-auto max-w-full font-kanit dark:bg-gray-950 dark:text-white">
-      <h5 style={{ textTransform: "uppercase" }} className="ml-3 dark:text-white">
-        top rated
-      </h5>
+  const sliderRef = useRef(null);
 
-      <div
-        className="grid overflow-x-auto xl:grid-cols-7 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  justify-center"
-        style={{ width: "100%" }}
-      >
-        {/*  */}
-        <div className="flex flex-col dark:bg-gray-950 dark:text-white">
-          <img
-            className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 shadow-[#777]"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <p>Basics of HTML</p>
-        </div>
-        {/* Add more card elements as needed */}
-        {/* Example additional card element */}
-        <div className="flex flex-col">
-          <img
-            className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 shadow-[#777] dark:shadow-cyan-500/50"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <p>BASICS OF HTML</p>
-        </div>
-        <div className="flex flex-col">
-          <img
-            className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 shadow-[#777] dark:shadow-cyan-500/50"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <p>BASICS OF HTML</p>
-        </div>
-        <div className="flex flex-col dark:bg-gray-950 dark:text-white">
-          <img
-            className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 shadow-[#777] dark:shadow-cyan-500/50"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <p>BASICS OF HTML</p>
-        </div>
-        <div className="flex flex-col">
-          <img
-            className="object-cover mb-6 rounded-xl shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56 shadow-[#777] dark:shadow-cyan-500/50"
-            src="https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-            alt=""
-          />
-          <p >BASICS OF HTML</p>
-        </div>
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1666,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1366,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1180,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 955,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 820,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 710,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 370,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 370,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      
+    ],
+  };
+
+  return (
+    <div className="flex flex-col gap-3  font-kanit dark:bg-gray-950 dark:text-white transition-colors w-full justify-center overflow-hidden ">
+      <div className="flex flex-col gap-3 font-kanit dark:bg-gray-950 dark:text-white transition-colors">
+        <h5
+          style={{ textTransform: "uppercase" }}
+          className="ml-3 dark:text-white"
+        >
+          Top Rated
+        </h5>
+        <Slider {...sliderSettings} ref={sliderRef} className="flex gap-5">
+          {cardData.map((card, index) => (
+            <div key={index} className="flex flex-row gap-3 m-3">
+              <div
+                className="w-[320px] h-auto rounded-3xl font-kanit border shadow-md overflow-hidden"
+                href="/courses"
+              >
+                <video
+                  className="w-full h-52 object-cover"
+                  onMouseEnter={(e) => e.currentTarget.play()}
+                  onMouseLeave={(e) => e.currentTarget.pause()}
+                  muted
+                  playsInline
+                >
+                  <source src={card.videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="p-4">
+                  <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+                    {card.title}
+                  </h5>
+                  <div className="flex items-center my-2">
+                    <span className="text-yellow-500 mr-1">{card.rating}</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                      {card.level}
+                    </span>
+                  </div>
+                  <div className="flex  justify-between">
+                  <a href="#" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:gray-blue-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Buy now</a>
+
+                    <button className="text-xs font-medium text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">
+                      save
+                    </button>
+                    </div>
+                    <button className="text-gray-500 mt-2 dark:text-gray-400">
+                      ❤️
+                    </button>
+                  
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

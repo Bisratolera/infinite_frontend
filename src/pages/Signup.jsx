@@ -25,7 +25,7 @@ const Signup = () => {
   };
 
   return value ? (
-    <div className="font-kanit">
+    <div className="font-kanit dark:bg-gray-950 dark:text-white transition-colors">
       <Toaster />
       <div className="flex flex-row gap-16 mt-12 ml-8">
         <Card className="object-cover rounded-3xl shadow-lg w-auto h- mr-4 shadow-gray-500/50">

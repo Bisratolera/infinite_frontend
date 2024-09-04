@@ -4,7 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* .dark-duration{
+  @apply transition-color duration-200
+} */
 /* latin-ext */
 @font-face {
   font-family: "Kaushan Script";
