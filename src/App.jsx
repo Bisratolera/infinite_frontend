@@ -25,9 +25,9 @@ function App() {
           : ""
       }`}
     >
-      {!shouldHideNavAndFooter && <Nav />}
+     
       <Outlet />
-      {!shouldHideNavAndFooter && <Footer />}
+    
     </div>
   );
 }
